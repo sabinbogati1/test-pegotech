@@ -32,6 +32,7 @@ const RegisterForm = ({
                   placeholder="Enter Company Name"
                   value={registerObj.name}
                   onChange={handleOnChange}
+                  required
                 />
               </Col>
             </Form.Group>
@@ -46,6 +47,7 @@ const RegisterForm = ({
                   placeholder="Enter Email"
                   value={registerObj.email}
                   onChange={handleOnChange}
+                  required
                 />
               </Col>
             </Form.Group>

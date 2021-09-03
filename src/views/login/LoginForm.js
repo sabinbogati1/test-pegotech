@@ -22,6 +22,7 @@ const LoginForm = ({
                 name="email"
                 type="email"
                 placeholder="Enter email"
+                required
                 value={email}
                 onChange={handleOnChange}
               />
@@ -36,6 +37,7 @@ const LoginForm = ({
                 name="password"
                 type="password"
                 placeholder="Password"
+                required
                 value={password}
                 onChange={handleOnChange}
               />

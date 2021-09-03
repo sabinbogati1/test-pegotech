@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Alert, Jumbotron } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 
 import RegisterForm from './RegisterForm';
 import DetailModal from './DetailModal';
@@ -20,7 +20,6 @@ const Register = () => {
   const [registerObj, setRegisterObj] = useState(initialRegisterObj);
   const [allCountries, setAllCountries] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [validationError, setValidationError] = useState(null);
 
   useEffect(() => {
     async function fetchAllCountries() {
@@ -44,11 +43,6 @@ const Register = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    if (!registerObj.name || !registerObj.email) {
-      setValidationError('Name and Email is required');
-      return;
-    }
-    setValidationError(null);
     setShowModal(true);
   };
 
@@ -59,7 +53,6 @@ const Register = () => {
   return (
     <div className="register-container bg-info">
       <Jumbotron className="form-box">
-        {validationError && <Alert variant="danger"> {validationError} </Alert>}
         <RegisterForm
           registerObj={registerObj}
           handleOnChange={handleOnChange}
